@@ -4,6 +4,9 @@ A simple dictionary manager in Python & Tkinter for viewing and editing
 text files with lines in the form:
 
     key TAB data1 TAB data2 TAB ...
+    
+Keys must be unique - when reading the data, subsequent rows with 
+identical keys are ignored.
 
 Screenshot Linux:
 
