@@ -5,7 +5,7 @@ text files with lines in the form:
 
     key TAB data1 TAB data2 TAB ...
     
-Keys must be unique - when reading the data, subsequent rows with 
+Keys must be unique - when reading the data file, subsequent lines with 
 identical keys are ignored.
 
 Screenshot Linux:
