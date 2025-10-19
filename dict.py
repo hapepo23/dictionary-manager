@@ -17,6 +17,7 @@ class Dict:
 	def addde(self, de: Dictentry) -> bool:
 		if de.isKeyValid(self.getkeyslist()):
 			self.data[de.key] = de
+			self.dirty = True
 			r = True
 		else:
 			r = False
@@ -30,6 +31,7 @@ class Dict:
 	def remove(self, key: str) -> bool:
 		if self.keyexists(key):
 			self.data.pop(key)
+			self.dirty = True
 			r = True
 		else:
 			r = False

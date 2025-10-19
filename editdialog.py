@@ -232,7 +232,6 @@ class EditDialog(Toplevel):
 				cnt = cnt + 1
 		if cnt > 0:
 			self.redo_keyslist()
-			self.dict.dirty = True
 		if cnt == 1:
 			self.keyvalue.set('')
 			utils.TextboxDeleteAndEnable(self.textbox, False)
@@ -250,13 +249,11 @@ class EditDialog(Toplevel):
 			if de.isKeyValid(self.dict.getkeyslist()):
 				self.dict.addde(de)
 				self.redo_keyslist()
-				self.dict.dirty = True
 				utils.TextboxEnable(self.textbox, False)
 				utils.EntryEnable(self.keyvalueentry, False)
 				utils.ButtonEnable(self.savebutton, False)
 				utils.ButtonEnable(self.updbutton, False)
 				utils.ButtonEnable(self.delbutton, False)
-				#self.show()
 				self.keyslist.selection_set(de.key)
 			else:
 				messagebox.showerror("Error", "The key exists (use UPDATE) or is empty!")
@@ -267,7 +264,6 @@ class EditDialog(Toplevel):
 				utils.TextboxEnable(self.textbox, False)
 				utils.ButtonEnable(self.updbutton, True)
 				utils.ButtonEnable(self.delbutton, True)
-				self.dict.dirty = True
 			else:
 				messagebox.showerror("Error", "The key is invalid!")
 
