@@ -41,11 +41,9 @@ class Dict:
 	def file_import(self, filepath: str) -> bool:
 		self.__init__()
 		try:
-			with open(filepath, 'r') as fileid:
-				filetext = fileid.read()
-			lines = filetext.split('\n')
-			for line in lines:
-				self.addstr(line)
+			with open(filepath, 'r', encoding='UTF-8') as file:
+				while line := file.readline():
+					self.addstr(line.rstrip('\n'))
 			self.filename = filepath
 			self.dirty = False
 			return True
@@ -55,9 +53,9 @@ class Dict:
 
 	def file_export_new(self, filepath: str) -> bool:
 		try:
-			fileid = open(filepath, 'w')
-			fileid.write(str(self))
-			fileid.close()
+			with open(filepath, 'w', encoding='UTF-8') as file:
+				for key, entry in self.data.items():
+					file.write(str(entry) + '\n')
 			self.filename = filepath
 			self.dirty = False
 			return True
