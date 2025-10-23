@@ -93,7 +93,7 @@ class MainWindow(Tk):
 
 
 	def appabout(self, *args):
-		messagebox.showinfo(title='About', message='Dictionary Manager Version 1.0 (10.2025)')
+		messagebox.showinfo(title='About', message='Dictionary Manager Version 1.0\n(2025-10, Python/Tkinter Version)')
 		
 
 	def newtitle(self):
