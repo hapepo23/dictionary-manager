@@ -13,7 +13,7 @@ class MainWindow(Tk):
 
 	def __init__(self, assetsdir:str, iconfilename:str, datadir:str, d:Dict):
 
-		super().__init__()
+		super().__init__(className='dictionary-python')
 		defaultFont = tkFont.Font(root=self, name='TkDefaultFont', exists=True)
 		defaultFont.configure(family='Noto Sans', size=11)
 
